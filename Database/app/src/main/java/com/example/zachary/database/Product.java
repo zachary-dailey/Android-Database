@@ -9,6 +9,10 @@ public class Product
 	private String _prodName;
 	private int _quantity;
 
+	public Product()
+	{
+	}
+
 	public Product(String _prodName, int _quantity)
 	{
 		this._prodName = _prodName;
