@@ -16,7 +16,7 @@ public class MyDBHandler extends SQLiteOpenHelper
 	private static final String TABLE_PRODUCTS = "products";
 
 	public static final String COLUMN_ID = "_id";
-	public static final String COLUMN_PRODUCT_NAME = "_prodName";
+	public static final String COLUMN_PRODUCTNAME = "_prodName";
 	public static final String COLUMN_QUANTITY = "_quantity";
 
 	public MyDBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version)
@@ -30,7 +30,7 @@ public class MyDBHandler extends SQLiteOpenHelper
 		String CREATE_PRODUCTS_TABLE = "CREATE TABLE " + TABLE_PRODUCTS
 				+ " ("
 					+ COLUMN_ID + " INTEGER primary key, "
-					+ COLUMN_PRODUCT_NAME + " TEXT, "
+					+ COLUMN_PRODUCTNAME + " TEXT, "
 					+ COLUMN_QUANTITY + " INTEGER"
 				+ ")";
 
@@ -53,7 +53,7 @@ public class MyDBHandler extends SQLiteOpenHelper
 	public void addProduct(Product product)
 	{
 		ContentValues values = new ContentValues();
-		values.put(COLUMN_PRODUCT_NAME, product.get_prodName());
+		values.put(COLUMN_PRODUCTNAME, product.get_prodName());
 		values.put(COLUMN_QUANTITY, product.get_quantity());
 
 		SQLiteDatabase db = this.getWritableDatabase();
@@ -66,7 +66,7 @@ public class MyDBHandler extends SQLiteOpenHelper
 	{
 		String query = ("SELECT *"
 						+ " FROM " + TABLE_PRODUCTS
-						+ " WHERE " + COLUMN_PRODUCT_NAME + " = \"" + productname + "\"");
+						+ " WHERE " + COLUMN_PRODUCTNAME + " = \"" + productname + "\"");
 
 		SQLiteDatabase db = getWritableDatabase();
 		Cursor cursor = db.rawQuery(query, null);
