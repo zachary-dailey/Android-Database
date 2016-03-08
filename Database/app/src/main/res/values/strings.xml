@@ -10,4 +10,5 @@
     <string name="notAssigned">Not Assigned</string>
     <string name="no_match_found">No Match Found</string>
     <string name="deleted">Record Deleted</string>
+    <string name="added">Record Added</string>
 </resources>

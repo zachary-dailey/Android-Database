@@ -37,6 +37,7 @@ public class DatabaseActivity extends AppCompatActivity
 		Product product = new Product(productBox.getText().toString(), quantity);
 
 		dbHandler.addProduct(product);
+		idView.setText(R.string.added);
 		productBox.setText("");
 		quantityBox.setText("");
 	}
@@ -51,6 +52,7 @@ public class DatabaseActivity extends AppCompatActivity
 			quantityBox.setText(String.valueOf(product.get_quantity()));
 		} else {
 			idView.setText(R.string.no_match_found);
+			quantityBox.setText(String.valueOf(R.string.no_match_found));
 		}
 	}
 
