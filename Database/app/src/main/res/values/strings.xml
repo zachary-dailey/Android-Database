@@ -8,4 +8,6 @@
     <string name="btnFind">Find</string>
     <string name="btnDelete">Delete</string>
     <string name="notAssigned">Not Assigned</string>
+    <string name="no_match_found">No Match Found</string>
+    <string name="deleted">Record Deleted</string>
 </resources>

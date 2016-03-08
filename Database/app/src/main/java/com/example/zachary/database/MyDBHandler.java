@@ -29,7 +29,7 @@ public class MyDBHandler extends SQLiteOpenHelper
 	{
 		String CREATE_PRODUCTS_TABLE = "CREATE TABLE " + TABLE_PRODUCTS
 				+ " ("
-					+ COLUMN_ID + " INTEGER primary key, "
+					+ COLUMN_ID + " INTEGER PRIMARY KEY, "
 					+ COLUMN_PRODUCTNAME + " TEXT, "
 					+ COLUMN_QUANTITY + " INTEGER"
 				+ ")";
@@ -81,15 +81,15 @@ public class MyDBHandler extends SQLiteOpenHelper
 			product.set_id(Integer.parseInt(cursor.getString(0)));
 			product.set_prodName(cursor.getString(1));
 			product.set_quantity(Integer.parseInt(cursor.getString(2)));
-			cursor.close();
 		}
 		else
 		{
 			product = null;
 		}
 
-		db.close();
+		cursor.close();
 
+		db.close();
 		return(product);
 	}
 
@@ -111,13 +111,14 @@ public class MyDBHandler extends SQLiteOpenHelper
 		{
 			product.set_id(Integer.parseInt(cursor.getString(0)));
 
-			db.delete(TABLE_PRODUCTS, 										// table name
-						COLUMN_ID + " = ?", 								// COLUMN_ID = arg[0]
-						new String[] {String.valueOf(product.get_id())});   // arg[0] = product.get_id();
+			db.delete(TABLE_PRODUCTS,                                       // table name
+						COLUMN_ID + " = ?",                                	// COLUMN_ID = arg[0]
+						new String[]{String.valueOf(product.get_id())});   	// arg[0] = product.get_id();
 
-			cursor.close();
 			result = true;
 		}
+
+		cursor.close();
 
 		db.close();
 		return result;

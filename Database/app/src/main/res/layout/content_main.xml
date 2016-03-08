@@ -105,18 +105,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btnAdd"
-            android:id="@+id/btnAdd"/>
+            android:id="@+id/btnAdd"
+            android:onClick="addProduct" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btnFind"
-            android:id="@+id/btnFind"/>
+            android:id="@+id/btnFind"
+            android:onClick="findProduct" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btnDelete"
-            android:id="@+id/btnDelete"/>
+            android:id="@+id/btnDelete"
+            android:onClick="deleteProduct" />
     </LinearLayout>
 </RelativeLayout>
