@@ -39,7 +39,7 @@ public class DatabaseActivity extends AppCompatActivity
 		dbHandler.addProduct(product);
 		idView.setText(R.string.added);
 		productBox.setText("");
-		quantityBox.setText("");
+		//quantityBox.setText(String.valueOf(0));
 	}
 
 	public void findProduct (View view) {
@@ -52,7 +52,7 @@ public class DatabaseActivity extends AppCompatActivity
 			quantityBox.setText(String.valueOf(product.get_quantity()));
 		} else {
 			idView.setText(R.string.no_match_found);
-			quantityBox.setText(String.valueOf(R.string.no_match_found));
+			quantityBox.setText(String.valueOf(0));
 		}
 	}
 
@@ -65,10 +65,11 @@ public class DatabaseActivity extends AppCompatActivity
 		{
 			idView.setText(R.string.deleted);
 			productBox.setText("");
-			quantityBox.setText("");
+			quantityBox.setText(String.valueOf(R.string.deleted));
 		}
 		else
 			idView.setText(R.string.no_match_found);
+			quantityBox.setText(String.valueOf(0));
 	}
 
 	@Override

@@ -55,8 +55,4 @@ public class Product
 	{
 		this._quantity = _quantity;
 	}
-
-
-
-
 }
