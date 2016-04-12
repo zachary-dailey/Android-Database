@@ -6,7 +6,9 @@
     <string name="txtProdQuant">Product Quantity</string>
     <string name="btnAdd">Add</string>
     <string name="btnFind">Find</string>
+    <string name="btnFindAll">Find All</string>
     <string name="btnDelete">Delete</string>
+    <string name="btnLoad">Load</string>
     <string name="notAssigned">Not Assigned</string>
     <string name="no_match_found">No Match Found</string>
     <string name="deleted">Record Deleted</string>

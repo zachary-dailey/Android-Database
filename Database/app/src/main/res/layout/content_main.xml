@@ -99,7 +99,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout2">
 
         <Button
             android:layout_width="wrap_content"
@@ -121,5 +122,28 @@
             android:text="@string/btnDelete"
             android:id="@+id/btnDelete"
             android:onClick="deleteProduct" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout2"
+        android:weightSum="1"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:layout_width="132dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btnFindAll"
+            android:id="@+id/btnFindAll"
+            android:onClick="findAllProduct" />
+
+        <Button
+            android:layout_width="132dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btnLoad"
+            android:id="@+id/btnLoad"
+            android:onClick="loadProducts"/>
     </LinearLayout>
 </RelativeLayout>

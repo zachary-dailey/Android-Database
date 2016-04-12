@@ -6,12 +6,15 @@ android {
 
     defaultConfig {
         applicationId "com.example.zachary.database"
-        minSdkVersion 8
+        minSdkVersion 11
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
     buildTypes {
+        debug {
+            debuggable true
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'

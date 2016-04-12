@@ -1,12 +1,16 @@
 package com.example.zachary.database;
 
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by Zachary on 3/8/2016.
@@ -27,6 +31,15 @@ public class DatabaseActivity extends AppCompatActivity
 		idView = (TextView) findViewById(R.id.prodID);
 		productBox = (EditText) findViewById(R.id.prodName);
 		quantityBox = (EditText) findViewById(R.id.prodQuant);
+
+		IntentFilter mStatusIntentFilter = new IntentFilter(Constants.BROADCAST_ACTION);
+
+		DownloadStateReceiver mDownloadStateReceiver = new DownloadStateReceiver();
+
+		LocalBroadcastManager.getInstance(this).registerReceiver(
+				mDownloadStateReceiver,
+				mStatusIntentFilter
+		);
 	}
 
 	public void addProduct (View view) {
@@ -55,6 +68,19 @@ public class DatabaseActivity extends AppCompatActivity
 			quantityBox.setText(String.valueOf(0));
 		}
 	}
+
+	public void findAllProduct (View view)
+	{
+		Intent intent = new Intent(this, ListerActivity.class);
+		startActivity(intent);
+	}
+
+	public void loadProducts (View view)
+	{
+		Intent intent = new Intent(this, MyIntentService.class);
+		startService(intent);
+	}
+
 
 	public void deleteProduct (View view) {
 		MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
